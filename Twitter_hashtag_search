@@ -1,0 +1,13 @@
+from selenium import webdriver
+from time import sleep
+
+search = input("What do you want to search?")
+
+browser = webdriver.Firefox()
+browser.get("https://twitter.com/search?q=%23"+search+"&src=typed_query")
+sleep(15)
+elements = browser.find_elements_by_css_selector(".css-901oao.r-18jsvk2.r-37j5jr.r-a023e6.r-16dba41.r-rjixqe.r-bcqeeo.r-bnwqim.r-qvutc0")
+
+for i in elements:
+    print("**************")
+    print(i.text)
